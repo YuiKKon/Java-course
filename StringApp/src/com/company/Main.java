@@ -1,8 +1,10 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import java.util.Random;
 
 //Написать программу в которой Пользователь сначала вводит своё имя,
 // В ответ ему возвращается его имя наоборот.
@@ -20,17 +22,27 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String args[]) {
+        names();
+        age();
+        num();
+        //arr();
+    }
+
+    static void names() {
         //name reverse
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите имя: ");
         String name = scanner.nextLine();
         String reverse = new StringBuffer(name).reverse().toString();
         System.out.println("Имя в обратном порядке: " + reverse);
+    }
 
+    static void age() {
         // age
+        Scanner scan = new Scanner(System.in);
         System.out.println("Введите ваш возраст: ");
-        int age = scanner.nextInt();
+        int age = scan.nextInt();
         if (age < 0) {
             System.out.println("Возраст не может быть отрицательным");
         } else if (age < 18) {
@@ -38,11 +50,15 @@ public class Main {
         } else if (age >= 18) {  // в 18 уже можно на клубнику)
             System.out.println("Езжай в Польщу на клубнику стрик");
         }
+    }
+
+    static void num() {
 
         //5 numbers
         Scanner numb = new Scanner(System.in);
         // пользователь вводит 5 чисел
         System.out.println("Введите 5 чисел :");
+
         int a = numb.nextInt();
         int b = numb.nextInt();
         int c = numb.nextInt();
@@ -60,6 +76,32 @@ public class Main {
         // используем методы max и min
         System.out.println("Наибольшое число: " + Collections.max(numbers));
         System.out.println("Наименьшее число: " + Collections.min(numbers));
+    }
+
+    static void arr() {
+        //
+
+        int number[] = new int[1000];
+        int total = 0;
+
+        //random masiv
+        for (int f = 0; f < number.length; f++) {
+            number[f] = (int) Math.round((Math.random() * 999));
+            System.out.println(number[f]);
+        }
 
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
