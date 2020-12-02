@@ -1,4 +1,4 @@
-package com.company;
+package com.company.pr1;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -79,17 +79,24 @@ public class Main {
     }
 
     static void arr() {
-        //
 
         int number[] = new int[1000];
         int total = 0;
 
-        //random masiv
+        //random m
         for (int f = 0; f < number.length; f++) {
-            number[f] = (int) Math.round((Math.random() * 999));
+            number[f] = (int) Math.round((Math.random() * 1000));
             System.out.println(number[f]);
         }
 
+        int max = number[0];
+
+        for (int i = 0; i < 1000; i++) {
+            if (number[i] > max) {
+                max = number[i];
+            }
+        }
+        System.out.println("Max is: " + max);
     }
 
 }
